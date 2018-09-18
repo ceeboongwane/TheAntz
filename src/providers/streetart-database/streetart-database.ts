@@ -23,8 +23,13 @@ export class StreetartzProvider {
     console.log('Hello StreetartzProvider Provider');
 
   }
-  logout() {
-    firebase.auth().signOut().then(function () {
+  logout(){
+    firebase.auth().signOut().then(() =>{
+      let loading = this.loadingCtrl.create({
+        spinner: 'bubbles',
+        content: 'signing out',
+        duration: 3000
+      });
     }).catch(function (error) {
     })
   }
